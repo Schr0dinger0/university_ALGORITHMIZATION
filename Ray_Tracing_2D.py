@@ -614,14 +614,12 @@ class RayTracingApp(QMainWindow):
         # Отрисовка счетчика с фоном
         if self.counter_checkbox.isChecked():
             font = painter.font()
-            font.setFamily("Comic Sans MC, Sans-serif, Arial")
             font.setPointSize(10)
             painter.setFont(font)
             
             # Текст для отображения
             counter_text = f"Проверок пересечений: {self.intersection_checks}"
             
-            # Рассчитываем размеры текста
             text_rect = painter.fontMetrics().boundingRect(counter_text)
             padding = 5  # Отступ от краёв текста
             bg_rect = text_rect.adjusted(-padding, -padding, padding, padding)
